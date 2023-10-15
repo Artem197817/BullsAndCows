@@ -49,7 +49,7 @@ public class ControllerGame {
             countNumberOfAttempts++;
         }
         if (countNumberOfAttempts == numberOfAttempts)
-            output.outputConsole("Попытки закончились. Вы не угадали слово.");
+            output.outputConsole("Попытки закончились. Вы не угадали слово." + word);
         inputUser.scannerClose();
     }
 
