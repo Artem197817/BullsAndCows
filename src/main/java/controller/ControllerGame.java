@@ -12,7 +12,7 @@ public class ControllerGame {
     private final CheckWord checkWord;
     private final InputUser inputUser;
     private final Output output;
-    private int countNumberOfAttempts = 0;
+    private int countNumberOfAttempts = 1;
     private String word;
     private boolean isHint = false;
 
@@ -41,15 +41,15 @@ public class ControllerGame {
             String result = checkWord.checkWord(word, userWord);
             if (result.equals("1")) {
                 output.outputConsole("Вы угадали слово " + word);
-                break;
+                inputUser.scannerClose();
+                return;
             }
             output.outputConsole(result);
             if (isHint)
                 output.outputConsole(checkWord.hinting());
             countNumberOfAttempts++;
         }
-        if (countNumberOfAttempts == numberOfAttempts)
-            output.outputConsole("Попытки закончились. Вы не угадали слово." + word);
+        output.outputConsole("Попытки закончились. Вы не угадали слово " + word);
         inputUser.scannerClose();
     }
 
