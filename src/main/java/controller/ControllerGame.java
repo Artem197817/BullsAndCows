@@ -7,16 +7,14 @@ import service.CheckWord;
 
 
 public class ControllerGame {
-    int numberOfAttempts;
-    SecretWord secretWord;
-    CheckWord checkWord;
-    InputUser inputUser;
-    Output output;
-    String result;
-    int countNumberOfAttempts = 0;
-    String word;
-
-    boolean isHint = false;
+    private int numberOfAttempts;
+    private final SecretWord secretWord;
+    private final CheckWord checkWord;
+    private final InputUser inputUser;
+    private final Output output;
+    private int countNumberOfAttempts = 0;
+    private String word;
+    private boolean isHint = false;
 
 
     public ControllerGame(SecretWord secretWord, CheckWord checkWord, Output output, InputUser inputUser) {
@@ -40,7 +38,7 @@ public class ControllerGame {
     public void run() {
         while (countNumberOfAttempts <= numberOfAttempts) {
             String userWord = inputUser.inputUserWord();
-            result = checkWord.checkWord(word, userWord);
+            String result = checkWord.checkWord(word, userWord);
             if (result.equals("1")) {
                 output.outputConsole("Вы угадали слово " + word);
                 break;
@@ -60,7 +58,8 @@ public class ControllerGame {
         if (scanner.equalsIgnoreCase("д") || scanner.equalsIgnoreCase("y"))
             isHint = true;
     }
-    public void selectionNumberOfPlayers (){
+
+    public void selectionNumberOfPlayers() {
         String numberOfPlayers = inputUser.scannerConsole("Введите количество игроков (1/2) ");
         if (numberOfPlayers.equalsIgnoreCase("1"))
             this.word = secretWord.secretWord();

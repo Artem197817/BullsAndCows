@@ -8,8 +8,8 @@ import java.util.Random;
 
 public class SecretWord {
 
-    ArrayList<String> wordRepositories = new ArrayList<>(List.of("папа", "мама", "утка", "гусыня", "лев", "лемур"));
-    InputUser inputUser;
+    public ArrayList<String> wordRepositories = new ArrayList<>(List.of("папа", "мама", "утка", "гусыня", "лев", "лемур"));
+    private final InputUser inputUser;
 
     public SecretWord(InputUser inputUser) {
         this.inputUser = inputUser;

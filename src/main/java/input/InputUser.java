@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class InputUser {
 
-    Output output;
+    private final Output output;
 
-    Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public InputUser(Output output) {
         this.output = output;

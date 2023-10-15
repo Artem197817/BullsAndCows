@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CheckWord {
 
-    List<Character> resultCheckWordList;
+    private List<Character> resultCheckWordList;
 
     public String checkWord(String word, String userWord) {
         resultCheckWordList = new ArrayList<>();
