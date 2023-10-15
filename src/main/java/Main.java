@@ -13,7 +13,5 @@ public class Main {
                 , inputUser);
         controllerGame.initGame();
         controllerGame.run();
-
-
     }
 }

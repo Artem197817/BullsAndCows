@@ -10,21 +10,26 @@ public class InputUser {
     Output output;
 
     Scanner scanner = new Scanner(System.in);
+
     public InputUser(Output output) {
         this.output = output;
     }
 
-    public String inputUserWord(){
+    public String inputUserWord() {
         return scannerConsole("Введите слово ");
     }
 
-    public String scannerConsole (String message){
+    public String scannerConsole(String message) {
         output.outputConsole(message);
         try {
-             return scanner.next();
+            return scanner.next();
         } catch (NoSuchElementException e) {
             output.outputConsole("Неккоректное значение");
         }
         return scannerConsole(message);
+    }
+
+    public void scannerClose() {
+        scanner.close();
     }
 }

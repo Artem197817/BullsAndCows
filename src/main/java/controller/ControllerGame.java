@@ -52,6 +52,7 @@ public class ControllerGame {
         }
         if (countNumberOfAttempts == numberOfAttempts)
             output.outputConsole("Попытки закончились. Вы не угадали слово.");
+        inputUser.scannerClose();
     }
 
     public void activationHint() {

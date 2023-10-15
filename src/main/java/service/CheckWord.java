@@ -23,9 +23,11 @@ public class CheckWord {
             } else {
                 resultCheckWordList.add('*');
             }
+            String decodedPartWord = hinting();
             for (char c : arrCharUserWord) {
                 if (arrCharWord[i] == c)
-                    countCows++;
+                    if (!decodedPartWord.contains(Character.toString(c)))
+                        countCows++;
             }
         }
         if (word.equals(userWord))
